@@ -1,0 +1,53 @@
+package com.boot.firstboot.Contoller;
+
+import com.boot.firstboot.Service.UserService;
+import com.boot.firstboot.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/user")
+public class UserContoller {
+    @Autowired
+    private UserService userService;
+
+//    @GetMapping
+//    public List<User> getAllUser(){
+//        return userService.getuserAll();
+//
+//    }
+//    @PostMapping
+//    public void createUser(@RequestBody User user ){
+//        userService.saveEntry(user);
+//    }
+
+
+    @PutMapping
+    public ResponseEntity<?> updateUser(@RequestBody User user){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+      String username =   authentication.getName();
+        User userinDb = userService.findByUserName(username);
+        if (userinDb != null){
+            userinDb.setUserName(user.getUserName());
+            userinDb.setPassword(user.getPassword());
+            userService.saveEntry(userinDb);
+        }
+        return new ResponseEntity<>(userinDb, HttpStatus.NO_CONTENT);
+
+    }
+    @DeleteMapping
+    public ResponseEntity<?> deleteUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+  String name =  authentication.getName();
+userService.deleteByUserName(name);
+return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+}

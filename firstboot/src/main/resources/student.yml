@@ -1,0 +1,5 @@
+student:
+ name: "student"
+ course: "btech"
+ id: 100
+ duration: 2
