@@ -1,8 +1,10 @@
 package com.boot.firstboot.entity;
 
 import com.mongodb.lang.NonNull;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
@@ -14,7 +16,10 @@ import java.util.List;
 
 @Document(collection = "user")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
+
 public class User {
     @Id
 
@@ -22,7 +27,8 @@ public class User {
     @Indexed( unique = true)
     @NonNull
     private String userName;
-
+    private String email;
+    private boolean sentimentAnalysis;
     @NonNull
     private String password;
 

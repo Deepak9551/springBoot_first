@@ -1,4 +1,35 @@
 spring:
   profiles:
-    active: dev
+    active: pro
+
+
+
+
+
+
+  mail:
+          host: smtp.gmail.com
+          port: 587
+
+          username: brazilnetwork48@gmail.com
+          password: cebe rgur zhvd khhp
+          properties:
+            mail:
+              smtp:
+                auth: true
+                starttls:
+                  enable: true
+  data:
+    redis:
+      host: redis-11126.c212.ap-south-1-1.ec2.redns.redis-cloud.com
+      port: 11126
+      password: krQZTtRQe0cGX3p2CKqSs54NccVpBvit
+#      host: localhost
+#      port: 6379
+
+
+
+weather:
+  api:
+    key: 1b9bce4f4ceece81ca0f411c45852996
 

@@ -1,5 +1,6 @@
 package com.boot.firstboot.entity;
 
+import com.boot.firstboot.Enum.Sentiment;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -19,6 +20,6 @@ public class MyData {
     private String title;
     private String content;
     private LocalDateTime date;
-
+    private Sentiment sentiment;
 
 }

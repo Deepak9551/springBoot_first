@@ -1,5 +1,6 @@
 package com.boot.firstboot.Contoller;
 
+import com.boot.firstboot.Service.AppCache;
 import com.boot.firstboot.Service.UserService;
 import com.boot.firstboot.Service.UserServiceImp;
 import com.boot.firstboot.entity.User;
@@ -16,6 +17,8 @@ import java.util.List;
 public class AdminController {
     @Autowired
     private UserService userService ;
+    @Autowired
+    private AppCache appCache;
     @GetMapping("/all-users")
     public ResponseEntity<?> getAllusers(){
         String message = "Users not found ";
@@ -32,4 +35,8 @@ public class AdminController {
     return new ResponseEntity<>(message,HttpStatus.CREATED);
     }
 
+    @GetMapping("/clearcache")
+    public void appclearcache(){
+        appCache.init();
+    }
 }
