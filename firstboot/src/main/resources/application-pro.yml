@@ -2,8 +2,8 @@ spring:
   data:
     mongodb:
       database: Student
-      uri: mongodb+srv://deepak:1234sonu@cluster0.fvcgi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       auto-index-creation: true
 
 server:
-  port: 8080
+  port: xxxxx
