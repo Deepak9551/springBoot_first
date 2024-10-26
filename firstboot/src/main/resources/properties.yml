@@ -1,12 +1,12 @@
 ##  server.port=8081
 ##    spring.data.mongodb.database=Student
-##    spring.data.mongodb.uri=mongodb+srv://deepak:1234sonu@cluster0.fvcgi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+##    spring.data.mongodb.uri=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ##    spring.data.mongodb.auto-index-creation=true
 #spring:
 #  data:
 #    mongodb:
 #      database: Student
-#      uri: mongodb+srv://deepak:1234sonu@cluster0.fvcgi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#      urixxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 #      auto-index-creation: true
 #
 #server:
